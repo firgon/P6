@@ -1,0 +1,39 @@
+.caroussel h2 {
+  text-align: center;
+}
+.caroussel__left-icon {
+  float: left;
+}
+.caroussel__right-icon {
+  float: right;
+}
+
+html {
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.heading {
+  display: flex;
+  background-color: gainsboro;
+  flex-direction: row;
+  align-content: center;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.heading h1 {
+  float: left;
+}
+.heading ul {
+  display: inline-block;
+  padding: inherit;
+}
+.heading li {
+  display: inline-block;
+  padding: inherit;
+}
+
+/*# sourceMappingURL=styles.css.map */

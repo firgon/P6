@@ -1,0 +1,19 @@
+{
+  "name": "p6",
+  "version": "1.0.0",
+  "description": "Page Just Stream It",
+  "main": "gulpfile.js",
+  "scripts": {
+    "sass": "sass --watch ./sass/main.scss:./public/css/styles.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/firgon/P6.git"
+  },
+  "author": "Emmanuel ALBISSER",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/firgon/P6/issues"
+  },
+  "homepage": "https://github.com/firgon/P6#readme"
+}

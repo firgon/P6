@@ -1,0 +1,14 @@
+
+.caroussel {
+    h2 {
+        text-align: center;
+    }
+
+    &__left-icon{
+        float: left;
+    }
+
+    &__right-icon{
+        float: right;
+    }
+}
