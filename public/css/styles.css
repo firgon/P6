@@ -1,11 +1,36 @@
-.caroussel h2 {
-  text-align: center;
+.caroussel {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
 }
 .caroussel__left-icon {
   float: left;
 }
+.caroussel__left-icon:hover {
+  color: orange;
+}
 .caroussel__right-icon {
   float: right;
+}
+.caroussel__right-icon:hover {
+  color: orange;
+}
+
+.movie-block {
+  border: 2px solid black;
+  display: inline-block;
+  min-width: 185px;
+  min-height: 100px;
+  cursor: url(../img/pointeur.png), help;
+}
+.movie-block.large {
+  border-width: 5px;
+  display: block;
+  min-height: 540px;
+}
+.movie-block:hover {
+  border-color: orange;
 }
 
 html {
@@ -34,6 +59,10 @@ html {
 .heading li {
   display: inline-block;
   padding: inherit;
+}
+
+h2 {
+  text-align: center;
 }
 
 /*# sourceMappingURL=styles.css.map */

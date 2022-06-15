@@ -1,3 +1,16 @@
-movie_block {
+.movie-block {
+    border: $normal-border solid $primary-color;
+    display: inline-block;
+    min-width: 185px;
+    min-height: 100px;
+    cursor: url(../img/pointeur.png), help;
 
+    &.large{
+        border-width: $large-border;
+        display: block;
+        min-height: 540px;
+    }
+    &:hover{
+        border-color: $active-color;
+    }
 }

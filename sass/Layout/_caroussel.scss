@@ -1,14 +1,21 @@
-
 .caroussel {
-    h2 {
-        text-align: center;
-    }
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
 
     &__left-icon{
         float: left;
+
+        &:hover {
+            color: $active-color;
+        }
     }
 
     &__right-icon{
         float: right;
+        &:hover {
+            color: $active-color;
+        }        
     }
 }

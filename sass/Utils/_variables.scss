@@ -1,0 +1,13 @@
+$primary-color: black;
+$active-color: orange;
+
+$normal-border: 2px;
+$large-border: 5px;
+
+@mixin border($type: "normal") {
+    @if ($type=="large"){
+        border: $large-border solid $primary-color;
+    }@else{
+        border: $normal-border solid $primary-color;
+    }
+}
