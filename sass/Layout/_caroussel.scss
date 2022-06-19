@@ -1,21 +1,51 @@
 .caroussel {
+    position: relative;
     display: flex;
     flex-wrap: nowrap;
-    justify-content: space-between;
-    align-items: center;
+        justify-content: space-between;
+        align-items: center;
+        
+    overflow: hidden;
 
     &__left-icon{
-        float: left;
-
-        &:hover {
-            color: $active-color;
-        }
+        left: 0px;
     }
 
     &__right-icon{
-        float: right;
+        right: 0px;
+    }
+
+    span {
+        position: absolute;
+        font-size: xxx-large;
+        font-weight: bolder;
+        border-radius: 15%;
+        background-color: rgba(255, 255, 255, 0.5);//blanc transparent
+
+        z-index: 1;
+        cursor: pointer;
+        
         &:hover {
             color: $active-color;
-        }        
+            background-color: rgba(255, 255, 255, 0.750);//blanc transparent
+        }
+    }
+
+   /* .nav{
+        position: absolute;
+        z-index: 1;
+        width: $total-width;
+        display: flex;
+        justify-content: space-between;
+        margin: 2px;
+    }
+*/
+    .movie-blocks{
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        left: 0px;
     }
 }

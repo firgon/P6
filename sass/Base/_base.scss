@@ -1,6 +1,6 @@
 
 html {
-    max-width: 1000px;
+    max-width: $total-width;
     margin-left:auto;
     margin-right:auto;
 }
@@ -14,6 +14,10 @@ html {
     align-items: center;
     padding-left: 20px;
     padding-right: 20px;
+
+    &__logo{
+        max-height: 120px;
+    }
 
     h1{
         float: left;

@@ -4,6 +4,8 @@ $active-color: orange;
 $normal-border: 2px;
 $large-border: 5px;
 
+$total-width: 1000px;
+
 @mixin border($type: "normal") {
     @if ($type=="large"){
         border: $large-border solid $primary-color;

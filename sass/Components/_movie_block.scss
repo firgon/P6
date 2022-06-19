@@ -3,12 +3,19 @@
     display: inline-block;
     min-width: 185px;
     min-height: 100px;
-    cursor: url(../img/pointeur.png), help;
+    margin-left: 2px;
+    margin-right: 2px;
+    background-size: cover;
+    cursor: url(../img/pointeur-small.png) 18 18, help;
 
     &.large{
         border-width: $large-border;
         display: block;
         min-height: 540px;
+        margin: 0px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: right;
     }
     &:hover{
         border-color: $active-color;

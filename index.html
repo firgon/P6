@@ -3,28 +3,53 @@
     <head>
         <meta charset="utf-8" />
         <link rel="stylesheet" href="public/css/styles.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+        <!--link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"-->
+        <script type="text/javascript" src="public/js/scripts.js"></script>
+        
         <title>Just Stream It ! - Accueil</title>
+        <link rel="icon" type="image/png" href="public/img/pointeur.png">
     </head>
 
     <body>
     
         <div class="heading">
-            <h1>JustStreamIt</h1>
+            <img class="heading__logo" src="public/img/logo.png">
             <ul>
-                <li>Acceuil</li>
+                <li><a href="index.html">Accueil</a></li>
                 <li>Categories</li>
             </ul>
         </div>
 
-        <div class="movie-block large"></div>
+        <div id="caroussel_movie_0" class="movie-block large"></div>
 
         <h2 class="caroussel__title">Films les mieux notés</h2>
         <div id="caroussel" class="caroussel">
-        <i class="caroussel__left-icon fa-solid fa-arrow-left-long fa-xl"></i>
-        <div class="movie-block"></div>
-        <i class="caroussel__right-icon fa-solid fa-arrow-right-long fa-xl"></i>
-        
+                <span id="caroussel_left" class="caroussel__left-icon">&larr;</span>
+                <span id="caroussel_right" class="caroussel__right-icon">&rarr;</span>
+                <div id="caroussel_movie_blocks" class="movie-blocks">
+                    <div id="caroussel_movie_1" class="movie-block"></div>
+                    <div id="caroussel_movie_2" class="movie-block"></div>
+                    <div id="caroussel_movie_3" class="movie-block"></div>
+                    <div id="caroussel_movie_4" class="movie-block"></div>
+                    <div id="caroussel_movie_5" class="movie-block"></div>
+                    <div id="caroussel_movie_6" class="movie-block"></div>
+                    <div id="caroussel_movie_7" class="movie-block"></div>
+                </div>
+        </div>
+
+        <h2 class="caroussel2__title">Action</h2>
+        <div id="caroussel2" class="caroussel">
+                <span id="caroussel2_left" class="caroussel__left-icon">&larr;</span>
+                <span id="caroussel2_right" class="caroussel__right-icon">&rarr;</span>
+                <div id="caroussel2_movie_blocks" class="movie-blocks">
+                    <div id="caroussel2_movie_0" class="movie-block"></div>
+                    <div id="caroussel2_movie_1" class="movie-block"></div>
+                    <div id="caroussel2_movie_2" class="movie-block"></div>
+                    <div id="caroussel2_movie_3" class="movie-block"></div>
+                    <div id="caroussel2_movie_4" class="movie-block"></div>
+                    <div id="caroussel2_movie_5" class="movie-block"></div>
+                    <div id="caroussel2_movie_6" class="movie-block"></div>
+                </div>
         </div>
 
     </body>

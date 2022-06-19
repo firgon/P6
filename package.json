@@ -4,7 +4,9 @@
   "description": "Page Just Stream It",
   "main": "index.html",
   "scripts": {
-    "sass": "sass --watch ./sass/main.scss:./public/css/styles.css"
+    "sass": "sass --watch ./sass/main.scss:./public/css/styles.css --style compressed",
+    "prefix": "postcss ./public/css/styles.css --use autoprefixer -d ./public/css/prefixed/",
+    "server": "pipenv run python ./API/manage.py runserver"
   },
   "repository": {
     "type": "github",
@@ -12,6 +14,7 @@
   },
   "author": "Emmanuel ALBISSER",
   "license": "ISC",
+  "browserslist": "last 4 versions",
   "bugs": {
     "url": "https://github.com/firgon/P6/issues"
   },
