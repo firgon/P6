@@ -69,7 +69,6 @@
   top: 50%;
   transform: translate(-50%, -50%);
   overflow: hidden;
-  cursor: zoom-out;
   background-size: contain;
   background-position: right;
   background-repeat: no-repeat;

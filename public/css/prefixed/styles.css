@@ -87,8 +87,6 @@
       -ms-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   overflow: hidden;
-  cursor: -webkit-zoom-out;
-  cursor: zoom-out;
   background-size: contain;
   background-position: right;
   background-repeat: no-repeat;
