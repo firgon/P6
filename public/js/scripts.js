@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     //add listener for clicking on movie_block->opening modal
-    let movie_blocks = document.querySelectorAll(".movie-block");
+   /* let movie_blocks = document.querySelectorAll(".movie-block");
     for (let movie_block of movie_blocks) {
         // if there is a button the listener is on the button only
         if (movie_block.querySelector('#my_button')) {
@@ -43,14 +43,16 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         
        // movie_block.film = movie_block.classList;
-    }
+    }*/
 
     //add listener on modal to close it
-    let modal = document.querySelector(".modal");
+    let button = document.querySelector(".modal .my_button");
     let overlay = document.querySelector(".overlay");
-    modal.addEventListener("click", function(evt){
+    button.addEventListener("click", function(evt){
         overlay.style.display = "none";
     });
+    button.classList.add("active");
+    button.style.cursor = "zoom-out";
 
 
     //add listener on arrows on each category
@@ -114,14 +116,14 @@ function add_movie_in_movie_block(movie_block, json_movie){
     
     movie_block.title = json_movie.title;
 
-    if (movie_block.querySelector('#my_button')) {
-        movie_block = movie_block.querySelector('#my_button');
+    if (movie_block.querySelector('.my_button')) {
+        movie_block = movie_block.querySelector('.my_button');
     }
 
     //record the film in dom element and add a listener to open modal on click
     movie_block.film = json_movie;
     movie_block.addEventListener("click", openModal);
-    movie_block.style.cursor = "zoom-in";
+    movie_block.classList.add("active");
 }
 
 /**

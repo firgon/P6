@@ -43,3 +43,22 @@ h2 {
     padding-right: 530px;
     font-size: larger;
 }
+
+.my_button {
+    display: inline-block;
+    padding: 1.5rem;
+    background: $heading-color;
+    border-radius: 20px;
+    margin: 20px;
+    font-size: 1.5rem;
+    color: $primary-color;
+    border: 2px solid $primary-color;
+}
+
+.active{
+    cursor: zoom-in;
+    &:hover{
+        border-color: $active-color;
+        color: $active-color;
+    }
+}
