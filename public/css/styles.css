@@ -27,6 +27,8 @@
   font-weight: bolder;
   border-radius: 15%;
   background-color: rgba(255, 255, 255, 0.5);
+  margin: 8px;
+  padding: 5px;
   z-index: 1;
   cursor: pointer;
 }
@@ -44,7 +46,7 @@
 }
 
 .overlay {
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.6);
   display: none;
   position: fixed;
   top: 0px;
@@ -76,14 +78,17 @@
   animation-fill-mode: forwards;
   animation-iteration-count: 1;
 }
+.modal__infos div {
+  margin-bottom: 10px;
+}
 
 @keyframes opening_modal {
   from {
-    height: 1px;
-    width: 1px;
+    height: 0px;
+    width: 0px;
   }
   25% {
-    height: 1px;
+    height: 0px;
     width: 1400px;
   }
   to {
@@ -107,19 +112,42 @@
   margin-left: 2px;
   margin-right: 2px;
   background-size: cover;
-  cursor: zoom-in;
   background-position: right;
 }
 .movie-block.large {
+  font-size: larger;
+  padding-left: 30px;
+  padding-right: 70%;
   border-width: 5px;
   display: block;
   min-height: 648.6486486486px;
   margin: 0px;
-  background-size: contain;
+  background-size: 70%;
+  background-color: black;
+  color: white;
   background-repeat: no-repeat;
+  cursor: default;
+}
+.movie-block.large:hover {
+  border-color: black;
 }
 .movie-block:hover {
   border-color: orange;
+}
+.movie-block #my_button {
+  display: inline-block;
+  padding: 1.5rem;
+  background: gainsboro;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  font-size: 1.5rem;
+  color: black;
+  border: 2px solid black;
+}
+.movie-block #my_button:hover {
+  border-color: orange;
+  color: orange;
 }
 
 .global {
@@ -155,6 +183,12 @@
 
 h2 {
   text-align: center;
+}
+
+.modal__infos {
+  padding-left: 30px;
+  padding-right: 530px;
+  font-size: larger;
 }
 
 /*# sourceMappingURL=styles.css.map */

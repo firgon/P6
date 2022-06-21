@@ -21,6 +21,8 @@
         font-weight: bolder;
         border-radius: 15%;
         background-color: rgba(255, 255, 255, 0.5);//blanc transparent
+        margin: 8px;
+        padding: 5px;
 
         z-index: map-get($map: $z-index, $key: "arrows");
         cursor: pointer;

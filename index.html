@@ -13,9 +13,19 @@
     <body>
         <div class="overlay">
             <div class="modal">
-                <h1 id="modal__title"></h1>
-                <div><strong></strong></div>
-
+                <div class="modal__infos">
+                    <h1 class="title"></h1>
+                    <div><strong>Genres : </strong><span class="genre"></span></div>
+                    <div><strong>Sortie : </strong><span class="date"></span></div>
+                    <div><strong>Note : </strong><span class="rated"></span></div>
+                    <div><strong>Score Imdb : </strong><span class="score"></span></div>
+                    <div><strong>Réalisateur(s) : </strong><span class="director"></span></div>
+                    <div><strong>Acteurs : </strong><span class="actors"></span></div>
+                    <div><strong>Durée : </strong><span class="duration"></span></div>
+                    <div><strong>Pays : </strong><span class="country"></span></div>
+                    <div><strong>Résultats box-office : </strong><span class="result"></span></div>
+                    <div><strong>Résumé : </strong><span class="sum_up"></span></div>
+                </div>
             </div>
         </div>
 
@@ -24,14 +34,21 @@
                 <img class="heading__logo" src="public/img/logo.png">
                 <ul>
                     <li><a href="index.html">Accueil</a></li>
-                    <li>Categories</li>
+                    <li><a id="caroussel_link" href="#caroussel"></a></li>
+                    <li><a id="caroussel2_link" href="#caroussel2"></a></li>
+                    <li><a id="caroussel3_link" href="#caroussel3"></a></li>
+                    <li><a id="caroussel4_link" href="#caroussel4"></a></li>
                 </ul>
             </div>
 
-            <div id="caroussel_movie_0" class="movie-block large"></div>
+            <div id="caroussel_movie_0" class="movie-block large">
+                <h1 id="movie-block__title"></h1>
+                    <div id="my_button">Détails</div>
+                    <div><strong>Résumé : </strong><span class="sum_up"></span></div>
+            </div>
 
 
-            <h2 class="caroussel__title">Films les mieux notés</h2>
+            <h2 class="caroussel__title"></h2>
             <div id="caroussel" class="caroussel">
                     <span id="caroussel_left" class="caroussel__left-icon">&larr;</span>
                     <span id="caroussel_right" class="caroussel__right-icon">&rarr;</span>
@@ -46,7 +63,7 @@
                     </div>
             </div>
 
-            <h2 class="caroussel2__title">Action</h2>
+            <h2 class="caroussel2__title"></h2>
             <div id="caroussel2" class="caroussel">
                     <span id="caroussel2_left" class="caroussel__left-icon">&larr;</span>
                     <span id="caroussel2_right" class="caroussel__right-icon">&rarr;</span>
@@ -58,6 +75,36 @@
                         <div id="caroussel2_movie_4" class="movie-block"></div>
                         <div id="caroussel2_movie_5" class="movie-block"></div>
                         <div id="caroussel2_movie_6" class="movie-block"></div>
+                    </div>
+            </div>
+
+            <h2 class="caroussel3__title"></h2>
+            <div id="caroussel3" class="caroussel">
+                    <span id="caroussel3_left" class="caroussel__left-icon">&larr;</span>
+                    <span id="caroussel3_right" class="caroussel__right-icon">&rarr;</span>
+                    <div id="caroussel3_movie_blocks" class="movie-blocks">
+                        <div id="caroussel3_movie_0" class="movie-block"></div>
+                        <div id="caroussel3_movie_1" class="movie-block"></div>
+                        <div id="caroussel3_movie_2" class="movie-block"></div>
+                        <div id="caroussel3_movie_3" class="movie-block"></div>
+                        <div id="caroussel3_movie_4" class="movie-block"></div>
+                        <div id="caroussel3_movie_5" class="movie-block"></div>
+                        <div id="caroussel3_movie_6" class="movie-block"></div>
+                    </div>
+            </div>
+
+            <h2 class="caroussel4__title"></h2>
+            <div id="caroussel4" class="caroussel">
+                    <span id="caroussel4_left" class="caroussel__left-icon">&larr;</span>
+                    <span id="caroussel4_right" class="caroussel__right-icon">&rarr;</span>
+                    <div id="caroussel4_movie_blocks" class="movie-blocks">
+                        <div id="caroussel4_movie_0" class="movie-block"></div>
+                        <div id="caroussel4_movie_1" class="movie-block"></div>
+                        <div id="caroussel4_movie_2" class="movie-block"></div>
+                        <div id="caroussel4_movie_3" class="movie-block"></div>
+                        <div id="caroussel4_movie_4" class="movie-block"></div>
+                        <div id="caroussel4_movie_5" class="movie-block"></div>
+                        <div id="caroussel4_movie_6" class="movie-block"></div>
                     </div>
             </div>
         </div>

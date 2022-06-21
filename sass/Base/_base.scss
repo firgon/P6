@@ -7,7 +7,7 @@
 
 .heading {
     display: flex;
-    background-color: gainsboro;
+    background-color: $heading-color;
     flex-direction: row;
     align-content: center;
     justify-content: space-between;
@@ -36,4 +36,10 @@
 
 h2 {
     text-align: center;
+}
+
+%infos{
+    padding-left: 30px;
+    padding-right: 530px;
+    font-size: larger;
 }
