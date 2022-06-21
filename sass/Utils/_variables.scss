@@ -4,7 +4,11 @@ $active-color: orange;
 $normal-border: 2px;
 $large-border: 5px;
 
-$total-width: 1000px;
+$column-width: 1200px;
+$modal-width: 1400px;
+$ratio: 1.85;
+
+$z-index: ("arrows":1, "modal":2);
 
 @mixin border($type: "normal") {
     @if ($type=="large"){

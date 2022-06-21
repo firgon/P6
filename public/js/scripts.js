@@ -16,50 +16,50 @@ for (let category_name in categories) {
     let category = categories[category_name];
     search_for_movies(category, 0);
 }
-//search_for_main_movie('http://localhost:8000/api/v1/titles/?page=1&sort_by=-imdb_score');
-//search_for_movies('http://localhost:8000/api/v1/titles/?page=1&sort_by=-imdb_score',0);
     
 document.addEventListener("DOMContentLoaded", function () {
-    let main_movie_blocks = document.querySelectorAll(".movie-block");
-    for (const movie_block of main_movie_blocks) {
-        movie_block.addEventListener("click", openPopUp);
+    //add listener for clicking on movie_block->opening modal
+    let movie_blocks = document.querySelectorAll(".movie-block");
+    for (const movie_block of movie_blocks) {
+        movie_block.addEventListener("click", openModal);
         movie_block.film = movie_block.classList;
     }
 
-    document.body.addEventListener("mouseup", function(evt){ mouseIsUp = true})
+    //add listener on modal to close it
+    let modal = document.querySelector(".modal");
+    let overlay = document.querySelector(".overlay");
+    modal.addEventListener("click", function(evt){
+        overlay.style.display = "none";
+    });
 
+
+    //add listener on arrows on each category
     for (const category_name in categories) {
         let category = categories[category_name];
         let left_arrow = document.querySelector("#" + category.name +'_left');
         let right_arrow = document.querySelector('#'+ category.name +'_right');
         let caroussel = document.querySelector('#'+ category.name +'_movie_blocks');
     
-        left_arrow.addEventListener("mousedown", function(evt){
+        left_arrow.addEventListener("click", function(evt){
+            console.log("Je décale à gauche");
             evt.stopPropagation();
             evt.preventDefault();
-            /*if (caroussel.style.left == '') caroussel.style.left = "-1px";
-            else {
-                let value = parseInt(caroussel.style.left)
-                if (value>-1000) {
-                    caroussel.style.left = (--value) + "px";
-                }
-            }
-        */
-            caroussel.insertBefore(caroussel.lastChild, caroussel.firstChild);
+
+            let movie_blocks = caroussel.querySelectorAll(".movie-block");
+
+            let lastChild = movie_blocks[movie_blocks.length-1];
+            let firstChild = movie_blocks[0]
+            console.log(firstChild);
+            caroussel.insertBefore(lastChild, firstChild);
         })
-        right_arrow.addEventListener("mousedown", function(evt){
+
+        right_arrow.addEventListener("click", function(evt){
+            console.log("Je décale à droite");
             evt.stopPropagation();
             evt.preventDefault();
-            /*if (caroussel.style.left == '') caroussel.style.left = "1px";
-            else {
-                let value = parseInt(caroussel.style.left)
-                if (value<1000) {
-                    caroussel.style.left = (++value) + "px";
-                    console.log(caroussel.style.left);
-                }
-            }*/
-            console.log("je décale!");
-            caroussel.appendChild(caroussel.firstChild);
+            
+            console.log(caroussel.querySelector(".movie-block"));
+            caroussel.appendChild(caroussel.querySelector(".movie-block"));
         })
     }
     
@@ -67,25 +67,15 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
 
-function openPopUp(evt) {
-    console.log(evt.currentTarget.film.url);
-    /*
-    L’image de la pochette du film
-Le Titre du film
-Le genre complet du film
-Sa date de sortie
-Son Rated
-Son score Imdb
-Son réalisateur
-La liste des acteurs
-Sa durée
-Le pays d’origine
-Le résultat au Box Office
-Le résumé du film*/
+function openModal(evt) {
+    document.querySelector(".overlay").style.display = "block";
+    search_for_infos_movie(evt.currentTarget.film.url);
+    
+
 }
 
 function add_movie_in_caroussel(json_movie,caroussel,index){
-    element = document.querySelector('#'+caroussel+'_movie_'+index);
+    let element = document.querySelector('#'+caroussel+'_movie_'+index);
     add_movie_in_movie_block(element, json_movie);
 }
 
@@ -113,10 +103,9 @@ function search_for_movies(category, index){
         }
     })
     .then(function (value){
-        console.log(value);
-        for (var i = 0; i < value.results.length && index+i<category.nb_movies; i++) {
+        let i = 0;
+        for ( ; i < value.results.length && index+i<category.nb_movies; i++) {
             let element = value.results[i];
-            console.log(index+i);
             add_movie_in_caroussel(element,category.name,index+i);
         }
         if (index+i < category.nb_movies){
@@ -133,7 +122,7 @@ function search_for_movies(category, index){
 /**
  * Function to search for the main movie, on top of the page
  */
-function search_for_main_movie(requete){
+function search_for_infos_movie(requete){
     fetch(requete)
     .then(function (res){
         if (res.ok){
@@ -141,11 +130,31 @@ function search_for_main_movie(requete){
         }
     })
     .then(function (value){
-        element = document.querySelector("#main_movie");
-        add_movie_in_movie_block(element,value.results[0]);
+        console.log(value);
+        
+        let modal = document.querySelector(".modal");
+        modal.style.backgroundImage = "url("+value.image_url+")";
+        modal.querySelector('h1').textContent = value.title;
+        modal.title= value.title;
+    
+    /*
+    L’image de la pochette du film
+Le Titre du film
+Le genre complet du film
+Sa date de sortie
+Son Rated
+Son score Imdb
+Son réalisateur
+La liste des acteurs
+Sa durée
+Le pays d’origine
+Le résultat au Box Office
+Le résumé du film*/
+
 
     })
     .catch(function(err){
         console.log("Il y a eu un problème : "+err);
+        console.log(requete);
     });
 }

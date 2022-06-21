@@ -4,9 +4,9 @@
   "description": "Page Just Stream It",
   "main": "index.html",
   "scripts": {
-    "sass": "sass --watch ./sass/main.scss:./public/css/styles.css --style compressed",
+    "sass": "sass --watch ./sass/main.scss:./public/css/styles.css --style expanded",
     "prefix": "postcss ./public/css/styles.css --use autoprefixer -d ./public/css/prefixed/",
-    "server": "pipenv run python ./API/manage.py runserver"
+    "server": "pipenv run python manage.py runserver"
   },
   "repository": {
     "type": "github",

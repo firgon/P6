@@ -1,23 +1,25 @@
 .movie-block {
     border: $normal-border solid $primary-color;
     display: inline-block;
-    min-width: 185px;
-    min-height: 100px;
+    min-width: calc(($column-width/4) - 8px);
+    min-height: calc(($column-width/4) - 8px);
     margin-left: 2px;
     margin-right: 2px;
     background-size: cover;
-    cursor: url(../img/pointeur-small.png) 18 18, help;
+    cursor: zoom-in;
+    
+    background-position: right;
 
     &.large{
         border-width: $large-border;
         display: block;
-        min-height: 540px;
+        min-height: calc($column-width/$ratio);
         margin: 0px;
         background-size: contain;
         background-repeat: no-repeat;
-        background-position: right;
     }
     &:hover{
         border-color: $active-color;
     }
+    
 }

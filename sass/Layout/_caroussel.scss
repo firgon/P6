@@ -22,7 +22,7 @@
         border-radius: 15%;
         background-color: rgba(255, 255, 255, 0.5);//blanc transparent
 
-        z-index: 1;
+        z-index: map-get($map: $z-index, $key: "arrows");
         cursor: pointer;
         
         &:hover {
