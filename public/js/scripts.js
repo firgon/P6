@@ -27,25 +27,15 @@ const categories = {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-    for (let category_name in categories) {
-        let category = categories[category_name];
-        document.querySelector('.'+category.name+'__title').textContent = category.title;
-        document.querySelector('#'+category.name+'_link').textContent = category.title;
-        search_for_movies(category, 0);
+    //for each category add title in nav bar, add title in category name title and search best films
+    for (let category in categories) {
+        let category_infos = categories[category];
+        document.querySelector('.'+category_infos.name+'__title').textContent = category_infos.title;
+        document.querySelector('#'+category_infos.name+'_link').textContent = category_infos.title;
+        search_for_movies(category_infos, 0);
     }
 
-    //add listener for clicking on movie_block->opening modal
-   /* let movie_blocks = document.querySelectorAll(".movie-block");
-    for (let movie_block of movie_blocks) {
-        // if there is a button the listener is on the button only
-        if (movie_block.querySelector('#my_button')) {
-            movie_block = movie_block.querySelector('#my_button');
-        }
-        
-       // movie_block.film = movie_block.classList;
-    }*/
-
-    //add listener on modal to close it
+    //add listener on button in modal to close it
     let button = document.querySelector(".modal .my_button");
     let overlay = document.querySelector(".overlay");
     button.addEventListener("click", function(evt){
@@ -191,7 +181,6 @@ function search_for_infos_movie(requete, block){
         }
     })
     .then(function (value){
-        console.log(value);
         
         block.style.backgroundImage = "url("+value.image_url+")";
         if (block.querySelector('h1'))         block.querySelector('h1').textContent = value.title;
