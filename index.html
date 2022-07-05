@@ -2,7 +2,7 @@
 <html lang="fr">
     <head>
         <meta charset="utf-8" />
-        <link rel="stylesheet" href="public/css/prefixed/styles.css" />
+        <link rel="stylesheet" href="public/css/styles.css" />
         <!--link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"-->
         <script src="public/js/scripts.js"></script>
         
@@ -35,10 +35,15 @@
                 <img class="heading__logo" src="public/img/logo.png" alt="Logo Just Stream It">
                 <ul>
                     <li><a href="index.html">Accueil</a></li>
-                    <li><a id="caroussel_link" href="#caroussel"></a></li>
-                    <li><a id="caroussel2_link" href="#caroussel2"></a></li>
-                    <li><a id="caroussel3_link" href="#caroussel3"></a></li>
-                    <li><a id="caroussel4_link" href="#caroussel4"></a></li>
+                    <li><a href="index.html" class="scrolling">Catégories</a>
+                        <ul class="under">
+                            <li><a id="caroussel_link" href="#caroussel__title"></a></li>
+                            <li><a id="caroussel2_link" href="#caroussel2__title"></a></li>
+                            <li><a id="caroussel3_link" href="#caroussel3__title"></a></li>
+                            <li><a id="caroussel4_link" href="#caroussel4__title"></a></li>
+                        </ul>
+                    </li>
+                    
                 </ul>
             </div>
 
@@ -49,7 +54,7 @@
             </div>
 
 
-            <h2 class="caroussel__title">Titre du film</h2>
+            <h2 id="caroussel__title">Titre du film</h2>
             <div id="caroussel" class="caroussel">
                     <span id="caroussel_left" class="caroussel__left-icon">&larr;</span>
                     <span id="caroussel_right" class="caroussel__right-icon">&rarr;</span>
@@ -64,7 +69,7 @@
                     </div>
             </div>
 
-            <h2 class="caroussel2__title">Titre de la catégorie 1</h2>
+            <h2 id="caroussel2__title">Titre de la catégorie 1</h2>
             <div id="caroussel2" class="caroussel">
                     <span id="caroussel2_left" class="caroussel__left-icon">&larr;</span>
                     <span id="caroussel2_right" class="caroussel__right-icon">&rarr;</span>
@@ -79,7 +84,7 @@
                     </div>
             </div>
 
-            <h2 class="caroussel3__title">Titre de la catégorie 2</h2>
+            <h2 id="caroussel3__title">Titre de la catégorie 2</h2>
             <div id="caroussel3" class="caroussel">
                     <span id="caroussel3_left" class="caroussel__left-icon">&larr;</span>
                     <span id="caroussel3_right" class="caroussel__right-icon">&rarr;</span>
@@ -94,7 +99,7 @@
                     </div>
             </div>
 
-            <h2 class="caroussel4__title">Titre de la catégorie 3</h2>
+            <h2 id="caroussel4__title">Titre de la catégorie 3</h2>
             <div id="caroussel4" class="caroussel">
                     <span id="caroussel4_left" class="caroussel__left-icon">&larr;</span>
                     <span id="caroussel4_right" class="caroussel__right-icon">&rarr;</span>

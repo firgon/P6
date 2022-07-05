@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
     //for each category add title in nav bar, add title in category name title and search best films
     for (let category in categories) {
         let category_infos = categories[category];
-        document.querySelector('.'+category_infos.name+'__title').textContent = category_infos.title;
+        document.querySelector('#'+category_infos.name+'__title').textContent = category_infos.title;
         document.querySelector('#'+category_infos.name+'_link').textContent = category_infos.title;
         search_for_movies(category_infos, 0);
     }

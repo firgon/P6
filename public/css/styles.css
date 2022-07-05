@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .caroussel {
   position: relative;
   display: flex;
@@ -55,8 +56,10 @@
   width: 100%;
   height: 100%;
   z-index: 2;
-  animation-name: fadeIn;
-  animation-duration: 0.4s;
+  -webkit-animation-name: fadeIn;
+          animation-name: fadeIn;
+  -webkit-animation-duration: 0.4s;
+          animation-duration: 0.4s;
 }
 
 .modal {
@@ -72,14 +75,34 @@
   background-size: contain;
   background-position: right;
   background-repeat: no-repeat;
-  animation: opening_modal;
-  animation-timing-function: ease-in-out;
-  animation-duration: 1s;
-  animation-fill-mode: forwards;
-  animation-iteration-count: 1;
+  -webkit-animation: opening_modal;
+          animation: opening_modal;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
 }
 .modal__infos div {
   margin-bottom: 10px;
+}
+
+@-webkit-keyframes opening_modal {
+  from {
+    height: 0px;
+    width: 0px;
+  }
+  25% {
+    height: 0px;
+    width: 1400px;
+  }
+  to {
+    width: 1400px;
+    height: 756.7567567568px;
+  }
 }
 
 @keyframes opening_modal {
@@ -94,6 +117,14 @@
   to {
     width: 1400px;
     height: 756.7567567568px;
+  }
+}
+@-webkit-keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 @keyframes fade-in {
@@ -152,11 +183,42 @@
 }
 .heading ul {
   display: inline-block;
-  padding: inherit;
+  position: relative;
+}
+.heading ul a {
+  text-decoration: none;
+  font-variant: small-caps;
+}
+.heading ul a:visited {
+  color: black;
+}
+.heading ul .under {
+  padding: 0;
+  padding: 5px;
+  display: none;
+  position: absolute;
+  box-shadow: 0px 1px 2px black;
+  background-color: gainsboro;
 }
 .heading li {
+  text-align: right;
   display: inline-block;
-  padding: inherit;
+  position: relative;
+  width: 280px;
+  font-size: x-large;
+}
+.heading li .scrolling::after {
+  content: " ▼";
+}
+.heading .under li {
+  margin-top: 2px;
+  width: 100%;
+}
+.heading .under li:hover {
+  background-color: #b6b6b6;
+}
+.heading ul li:hover .under {
+  display: block;
 }
 
 h2 {
@@ -187,5 +249,3 @@ h2 {
   border-color: orange;
   color: orange;
 }
-
-/*# sourceMappingURL=styles.css.map */

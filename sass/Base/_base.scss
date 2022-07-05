@@ -25,12 +25,50 @@
 
     ul {
         display: inline-block;
-        padding: inherit;
+        position: relative;
+        a {
+            text-decoration: none;
+            font-variant: small-caps;
+
+            &:visited{
+                color:black
+            }
+        }
+        .under {
+            padding: 0;
+            padding: 5px;
+            display: none;
+            position: absolute;
+            box-shadow: 0px 1px 2px black;
+            background-color: $heading-color;
+        }
     }
 
     li {
+        
+        text-align: right;
         display: inline-block;
-        padding: inherit;
+        position: relative;
+        width: 280px;
+        font-size: x-large;
+
+        .scrolling::after{
+            content: " ▼";
+        }
+    }
+
+    .under li {
+        margin-top: 2px;
+        width: 100%;
+
+        &:hover{
+            background-color: darken($heading-color, 15%);
+        }
+    }
+
+    ul li:hover .under {
+        display: block;
+    
     }
 }
 
